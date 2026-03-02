@@ -151,22 +151,8 @@
     }
 }
 
-.category-economic   { 
-    fill: #E3F2FD !important; 
-}
-
-.category-political  {
-    fill: #90CAF9 !important; 
-}
-
-.category-historical { 
-    fill: #42A5F5 !important; 
-}
-
-.category-climate    {
-    fill: #1E88E5 !important; 
-}
-
-.category-geography  { 
-    fill: #0D47A1 !important; 
-}
+.category-economic path   { fill: #E9EEF5 !important; }
+.category-cultural path  { fill: #C9D6E5 !important; }
+.category-historical path { fill: #9FB6D4 !important; }
+.category-climate path    { fill: #6E8FB8 !important; }
+.category-geography path  { fill: #3F5F87 !important; }

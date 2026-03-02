@@ -1364,31 +1364,9 @@ const stateCategories = {
   HI: "economic"
 };
 
-function applyCategoryColors(mapId) {
-
-    const categoryClassMap = {
-        economic: "category-economic",
-        political: "category-political",
-        historical: "category-historical",
-        climate: "category-climate",
-        geography: "category-geography"
-    };
-
-    Object.keys(stateCategories).forEach(function (stateCode) {
-
-        const category = stateCategories[stateCode];
-        const cssClass = categoryClassMap[category];
-
-        if (!cssClass) return;
-
-        const stateElement = document.querySelector(
-            "#" + mapId + " .cmm-usa-state-" + stateCode.toLowerCase()
-        );
-
-        if (stateElement) {
-            stateElement.classList.add(cssClass);
-        }
-    });
+for (const state in stateCategories) {
+  const category = stateCategories[state];
+  myUsaMap.statesData[state].cssClass = "category-" + category;
 }
 
-applyCategoryColors("cmm-usa");
+myUsaMap.draw();
