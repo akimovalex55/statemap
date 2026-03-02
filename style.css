@@ -150,3 +150,23 @@
         font-size: 42px !important;
     }
 }
+
+.category-economic   { 
+    fill: #E3F2FD !important; 
+}
+
+.category-political  {
+    fill: #90CAF9 !important; 
+}
+
+.category-historical { 
+    fill: #42A5F5 !important; 
+}
+
+.category-climate    {
+    fill: #1E88E5 !important; 
+}
+
+.category-geography  { 
+    fill: #0D47A1 !important; 
+}

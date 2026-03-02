@@ -1299,3 +1299,96 @@ myUsaMap.setStatesData({
     }
 });
 myUsaMap.draw();
+
+const stateCategories = {
+
+  // 1. Historical Origins
+  DE: "historical",
+  PA: "historical",
+  VA: "historical",
+  MA: "historical",
+  MD: "historical",
+  TN: "historical",
+  VT: "historical",
+  NH: "historical",
+  IL: "historical",
+  ME: "historical",
+
+  // 2. Natural Resources & Geography
+  CA: "geography",
+  NV: "geography",
+  CO: "geography",
+  MI: "geography",
+  WV: "geography",
+  ID: "geography",
+  MT: "geography",
+  AZ: "geography",
+  AR: "geography",
+  OR: "geography",
+
+  // 3. Climate & Environmental Features
+  FL: "climate",
+  AK: "climate",
+  WY: "climate",
+  NC: "climate",
+  SC: "climate",
+  WA: "climate",
+  LA: "climate",
+  MN: "climate",
+  NM: "climate",
+  UT: "climate",
+
+  // 4. Cultural Identity & Social Meaning
+  TX: "cultural",
+  OK: "cultural",
+  MO: "cultural",
+  IN: "cultural",
+  WI: "cultural",
+  OH: "cultural",
+  KY: "cultural",
+  AL: "cultural",
+  GA: "cultural",
+  MS: "cultural",
+  DC: "cultural",
+
+  // 5. Economic Activity & Industry
+  IA: "economic",
+  KS: "economic",
+  NE: "economic",
+  ND: "economic",
+  SD: "economic",
+  CT: "economic",
+  RI: "economic",
+  NY: "economic",
+  NJ: "economic",
+  HI: "economic"
+};
+
+function applyCategoryColors(mapId) {
+
+    const categoryClassMap = {
+        economic: "category-economic",
+        political: "category-political",
+        historical: "category-historical",
+        climate: "category-climate",
+        geography: "category-geography"
+    };
+
+    Object.keys(stateCategories).forEach(function (stateCode) {
+
+        const category = stateCategories[stateCode];
+        const cssClass = categoryClassMap[category];
+
+        if (!cssClass) return;
+
+        const stateElement = document.querySelector(
+            "#" + mapId + " .cmm-usa-state-" + stateCode.toLowerCase()
+        );
+
+        if (stateElement) {
+            stateElement.classList.add(cssClass);
+        }
+    });
+}
+
+applyCategoryColors("cmm-usa");
