@@ -656,7 +656,7 @@ myUsaMap.setStatesData({
         "fullName": "District Of Columbia",
         "title": "District of Columbia (Washington, D.C.) – The Nation’s Capital",
         "description": null,
-        "longDescription": "The District of Columbia is called the Nation’s Capital because it is the seat of the United States federal government and home to the White House, the Capitol Building, and the Supreme Court",
+        "longDescription": "The District of Columbia is called the Nation’s Capital as it is the seat of the U.S. government and home to major national institutions.",
         "linkUrl": null,
         "isDisabled": false,
         "isHovering": false,
