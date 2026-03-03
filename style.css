@@ -1,3 +1,7 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .cmm-usa {
     display: none;
     margin: 0 auto;
@@ -132,7 +136,7 @@
 
     .cmm-usa-hover-state-info {
         width: 30% !important;
-        font-size: 30px !important;
+        font-size: 25px !important;
     }
 }
 
@@ -156,3 +160,81 @@
 .category-historical path { fill: #9FB6D4 !important; }
 .category-climate path    { fill: #6E8FB8 !important; }
 .category-geography path  { fill: #3F5F87 !important; }
+
+.map-legend {
+    padding: 1.2rem 1.4rem;
+    background: #f6f8fb;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+    width: clamp(12rem, 18vw, 18rem);
+    max-width: 25vw;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.legend-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.legend-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.legend-list li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+}
+
+.legend-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.3em;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 0.15rem;
+    border: 0.06rem solid rgba(0, 0, 0, 0.15);
+}
+
+.legend-list li.economic::before   { background: #E9EEF5; }
+.legend-list li.cultural::before  { background: #C9D6E5; }
+.legend-list li.historical::before { background: #9FB6D4; }
+.legend-list li.climate::before    { background: #6E8FB8; }
+.legend-list li.geography::before  { background: #3F5F87; }
+
+@media (max-width: 58rem) {
+
+    .map-legend {
+        position: fixed;
+        bottom: 15%;
+        left: 25%;
+        right: auto;
+        top: auto;
+        transform: translateX(-50%);
+        width: 85%;
+        max-width: 22rem;
+    }
+
+}
+
+@media (max-aspect-ratio: 4/3) {
+
+    .map-legend {
+        width: clamp(12rem, 30vw, 16rem);
+        font-size: clamp(0.75rem, 0.9vw, 1.1rem) !important;
+    }
+    .legend-list li{
+        font-size: clamp(0.75rem, 0.9vw, 1.1rem) !important;
+    }
+    .cmm-usa svg {
+        width: clamp(50%, 70vw, 95%);
+    }
+
+}
